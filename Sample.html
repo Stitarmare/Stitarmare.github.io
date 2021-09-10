@@ -19,15 +19,15 @@
         <p class="status-msg">Your payment has been canceled. Please try again.</p>
         <h2 class="status">&nbsp</h2>
         <div class="btn-wrapper">
-            <button class="action-btn" onClick="nextClick('error')">OK</button>
+            <button class="action-btn" onClick="done('error')">OK</button>
             <script type="text/javascript">
                 function done(result) {
                     try {
                         App.postMessage(result);
                     } catch (e) {
-                        
+                        window.location = 'gildedapp://gilded.app/payment?status=' + result;
                     }
-                    window.location = 'gildedapp://gilded.app/payment?status=' + result;
+                    
                 }
             </script>
         </div>
