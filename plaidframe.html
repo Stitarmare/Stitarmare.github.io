@@ -21,6 +21,10 @@
           token: tokenUrl,
           onSuccess: (public_token, metadata) => 
           {
+            var accountId = metadata.accounts[0].id;
+            var name = metadata.accounts[0].name;
+            console.log(accountId);
+            console.log(name);
             window.location = 'gildedapp://gilded.app/plaid?result=success&publicToken=' + public_token+'&metadata='+JSON.stringify(metadata);
           },
           onLoad: () => {},
