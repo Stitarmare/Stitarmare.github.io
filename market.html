@@ -12,9 +12,14 @@
     
     <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
     <script type="text/javascript">
+        const urlParams = new URLSearchParams(window.location.search);
+        const height = urlParams.get('height');
+        const width = urlParams.get('width');
+
     new TradingView.widget(
     {
-    "autoSize":true,
+    "height":height,
+    "width":width,
     "symbol": "BITSTAMP:BTCUSD",
     "interval": "60",
     "timezone": "Etc/UTC",
